@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_commodite_tree" model="ir.ui.view">
+        <field name="name">commodite.tree</field>
+        <field name="model">hotel.commodite</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="confort"/>
+                <field name="divertissement"/>
+                <field name="service"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_commodite_form" model="ir.ui.view">
+        <field name="name">commodite.form</field>
+        <field name="model">hotel.commodite</field>
+        <field name="arch" type="xml">
+            <form string="Commodites">
+                <sheet>
+                    <group>
+                        <field name="confort"/>
+                        <field name="divertissement"/>
+                        <field name="service"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_commodite" model="ir.actions.act_window">
+        <field name="name">Commodités</field>
+        <field name="res_model">hotel.commodite</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_planning_tree" model="ir.ui.view">
+        <field name="name">planning.tree</field>
+        <field name="model">hotel.planning</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="staff_id"/>
+                <field name="date"/>
+                <field name="shift"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_planning_form" model="ir.ui.view">
+        <field name="name">planning.form</field>
+        <field name="model">hotel.planning</field>
+        <field name="arch" type="xml">
+            <form string="Planning">
+                <sheet>
+                    <group>
+                        <field name="staff_id"/>
+                        <field name="date"/>
+                        <field name="shift"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_planning" model="ir.actions.act_window">
+        <field name="name">Plannings</field>
+        <field name="res_model">hotel.planning</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

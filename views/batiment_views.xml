@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_batiment_tree" model="ir.ui.view">
+        <field name="name">batiment.tree</field>
+        <field name="model">hotel.batiment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="adresse"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_batiment_form" model="ir.ui.view">
+        <field name="name">batiment.form</field>
+        <field name="model">hotel.batiment</field>
+        <field name="arch" type="xml">
+            <form name="Batiment">
+                <sheet>
+                    <group>
+                        <field name="image" widget="image"/>
+                    </group>
+                    <group>
+                        <field name="name"/>
+                        <field name="adresse"/>
+                        <field name="nbr_chambre"/> 
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_batiment" model="ir.actions.act_window">
+        <field name="name">Bâtiments</field>
+        <field name="res_model">hotel.batiment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem id="hotel_menu" name="Gestion d\'Hôtel" sequence="1"/>
+    <menuitem id="hotel_batiment_menu" name="batiment" sequence="1" action="action_batiment" parent="hotel_menu"/> -->
+</odoo>

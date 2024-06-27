@@ -1,0 +1,45 @@
+<odoo>
+    <template id="reservation_form_template" name="Reservation Form">
+        <t t-call="website.layout">
+            <div class="container mt16 mb16">
+                <h1>Formulaire de Réservation</h1>
+                <form action="/reservation/submit" method="post">
+                    <div class="form-group">
+                        <label for="client_id">Client</label>
+                        <select id="client_id" name="client_id" required="required" class="form-control">
+                            <t t-foreach="request.env['hotel.client'].sudo().search([])" t-as="client">
+                                <option t-att-value="client.id"><t t-esc="client.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="room_id">Chambre</label>
+                        <select id="room_id" name="room_id" required="required" class="form-control">
+                            <t t-foreach="request.env['hotel.chambre'].sudo().search([])" t-as="room">
+                                <option t-att-value="room.id"><t t-esc="room.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="check_in">Date de Début</label>
+                        <input type="date" id="check_in" name="check_in" required="required" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_fin">Date de Fin</label>
+                        <input type="date" id="date_fin" name="date_fin" required="required" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Réserver</button>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="thank_you_template" name="Thank You">
+        <t t-call="website.layout">
+            <div class="container mt16 mb16">
+                <h1>Merci pour votre réservation!</h1>
+                <p>Votre réservation a été reçue et est en cours de traitement.</p>
+            </div>
+        </t>
+    </template>
+</odoo>

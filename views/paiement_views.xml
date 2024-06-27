@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_paiement_tree" model="ir.ui.view">
+        <field name="name">paiement.tree</field>
+        <field name="model">hotel.paiement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="reservation_id"/>
+                <field name="montant"/>
+                <field name="date_paiement"/>
+                <field name="methode_paiement"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_paiement_form" model="ir.ui.view">
+        <field name="name">paiement.form</field>
+        <field name="model">hotel.paiement</field>
+        <field name="arch" type="xml">
+            <form name="Paiement">
+                <sheet>
+                    <group>
+                        <field name="reservation_id"/>
+                        <field name="montant"/>
+                        <field name="date_paiement"/>
+                        <field name="methode_paiement"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_paiement" model="ir.actions.act_window">
+        <field name="name">Paiements</field>
+        <field name="res_model">hotel.paiement</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

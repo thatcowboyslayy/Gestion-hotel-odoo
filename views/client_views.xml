@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_client_tree" model="ir.ui.view">
+        <field name="name">client.tree</field>
+        <field name="model">hotel.client</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="telephone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_client_form" model="ir.ui.view">
+        <field name="name">client.form</field>
+        <field name="model">hotel.client</field>
+        <field name="arch" type="xml">
+            <form string="Client">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="telephone"/>
+                        <field name="adresse"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_client" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">hotel.client</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

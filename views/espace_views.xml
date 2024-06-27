@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_espace_tree" model="ir.ui.view">
+        <field name="name">espace.tree</field>
+        <field name="model">hotel.espace</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="prix_location"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_espace_form" model="ir.ui.view">
+        <field name="name">espace.form</field>
+        <field name="model">hotel.espace</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="image" widget="image"/>
+                </group>
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="prix_location"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_espace" model="ir.actions.act_window">
+        <field name="name">Espaces</field>
+        <field name="res_model">hotel.espace</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
